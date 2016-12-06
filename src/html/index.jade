@@ -1,0 +1,115 @@
+extends ../layouts/main-page.jade
+
+block title
+  title Electrolux
+
+block content
+  div.affix(data-spy="affix" id="dot-nav")
+    h4.affix__title Быстрый переход
+    ul
+      li(class="awesome-tooltip active" title="Главная")
+        a(href="#home")
+      li(class="awesome-tooltip" title="Выбери свой комплект")
+        a(href="#calc")
+      li(class="awesome-tooltip" title="Рассчитай свою выгоду")
+        a(href="#own-calc")
+      li(class="awesome-tooltip" title="Популярные продукты")
+        a(href="#prod")
+      li(class="awesome-tooltip" title="Наши партнеры")
+        a(href="#partners")
+      li(class="awesome-tooltip" title="Зарегистрировать покупку")
+        a(href="#reg")
+  include ../layouts/header.jade
+  #home.section-nav
+    section.section-main.bg-cover(style="background-image: url(images/image.jpg);")
+      .container-fixed
+        .row
+          .col-sm-6
+            h1.section-main__text-container
+              .section-main__text-one Вернем
+                .section-main__text-two <span>до </span>50%
+              .section-main__text-three от стоимости<br />посудомоечной машины!
+              .section-main__text-three(style="margin-top: 10px;") успейте до 31.01.2017
+    section.section-map
+      .container-fixed
+        a.section-map__item(href="#buy" data-animation="slideInLeft")
+          .section-map__icon
+            i.icon-cart
+          h3 Приобрети технику<br /><b>Electrolux</b>
+        a.section-map__item(href="#" data-toggle="modal" data-target="#regModal" data-animation="zoomIn")
+          .section-map__icon
+            i.icon-pencil
+          h3 Зарегистрируйся в<br />акции
+        a.section-map__item(href="#" data-toggle="modal" data-target="#howItWork" data-animation="slideInRight")
+          .section-map__icon
+            i.icon-question
+          h3 Как это работает
+  section#calc.section-nav.section-calculate
+    .container-fixed
+      h2.title(style="margin-bottom: 0;") Выбери комплект и узнай свою выгоду
+      p.text-center.pink Выберите товары, чтобы узнать свою выгоду
+      .row
+        .section-calculate__item.col-md-4
+          .section-calculate__products.products
+            .products__item(data-productID="1" data-name="Духовка" data-price="0" data-type="1")
+              img(src="images/pic1.png", alt="")
+            i.icon-plus
+            .products__item(data-productID="7" data-name="Варочная панель" data-price="0" data-type="2")
+              img(src="images/pic2.png", alt="")
+            i.icon-plus
+            .products__item(data-productID="9" data-name="Посудомоечная машина" data-price="0" data-type="3")
+              img(src="images/pic3.png", alt="" )
+          .section-calculate__text
+            //- p При покупке комплекта духовки,<br />варочной панели и посудомоечной<br />машины <b>Electrolux</b>
+          button.button Рассчитать выгоду
+        .section-calculate__item.col-md-4
+         .section-calculate__products.products
+            .products__item(data-productID="1" data-name="Духовка" data-price="0" data-type="1")
+              img(src="images/pic1.png", alt="")
+            i.icon-plus
+            .products__item(data-productID="7" data-name="Варочная панель" data-price="0" data-type="2")
+              img(src="images/pic2.png", alt="")
+          .section-calculate__text
+            //- p При покупке комплекта духовки и<br />варочной панели <b>Electrolux</b>
+          button.button Рассчитать выгоду
+        .section-calculate__item.col-md-4
+         .section-calculate__products.products
+            .products__item(data-productID="9"  data-name="Посудомоечная машина" data-price="0" data-type="3")
+              img(src="images/pic3.png", alt="")
+          .section-calculate__text
+            //- p При покупке посудомоечной<br />машины <b>Electrolux</b>
+          button.button Рассчитать выгоду
+  section#own-calc.section-nav.section-calculator
+    .container-fixed
+      h2.title(style="margin-bottom: 0;") Калькулятор выгоды<sup>*</sup>
+      p.text-center.pink Введи стоимость выбранной техники,<br />и калькулятор автоматически рассчитает выгоду
+      .section-calculator__calculator.row
+        .col-md-8
+          .section-calculator__item(data-type="1" data-name="Духовка")
+            .section-calculator__prod
+            .section-calculator__button
+              button.button.addPosition Добавить<br />духовку
+          .section-calculator__item(data-type="2" data-name="Варочная<br />панель")
+            .section-calculator__prod
+            .section-calculator__button
+              button.button.addPosition Добавить<br />варочную<br />панель
+          .section-calculator__item(data-type="3" data-name="Посудомоечная<br />машина")
+            .section-calculator__prod
+            .section-calculator__button
+              button.button.addPosition Добавить<br />посудомоечную<br />машину
+        .col-md-4
+          .section-calculator__amount
+            .section-calculator__amount-number 0
+            .section-calculator__amount-text Ваша выгода
+      .row
+        .col-xs-12
+          p.text-center <sup>*</sup>Онлайн Калькулятор является интерактивной опцией. Не является офертой.<br />В случае покупки техники со скидкой учитывается стоимость с вычетом скидки.
+  include ../includes/goods.jade
+  include ../includes/partners.jade
+  section#reg.section-nav.section-registration
+      .container-fixed.text-center
+        h2.title Уже купил технику Electrolux?<br />Прими участие в акции!
+        button.button(data-toggle="modal" data-target="#regModal") Зарегистрировать покупку
+  include ../includes/modals-one.jade
+block scripts
+  script.
