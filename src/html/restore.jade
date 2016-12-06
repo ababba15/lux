@@ -1,0 +1,21 @@
+extends ../layouts/main-page.jade
+
+block title
+  title Electrolux
+
+block content
+  include ../layouts/header.jade
+  section.section-new-pass
+    h2.title Изменение пароля
+    form#newPass(action="index.html")
+        .input-set.input-set--animated-label
+          label.input-set__label Новый пароль
+          input#password(type="password" name="password" placeholder="Новый пароль" minlength="6" required)
+        .input-set.input-set--animated-label
+          label.input-set__label Повторите пароль
+          input#passwordRepeat(type="password" name="passwordRepeat" placeholder="Повторите пароль" required)
+        .input-set.error
+          #error
+        .input-set
+            button.button(type="submit") Сохранить
+  include ../includes/modals-one.jade

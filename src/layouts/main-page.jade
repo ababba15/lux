@@ -2,9 +2,16 @@ doctype html
 html
 	include head.jade
 	body
+<<<<<<< HEAD
 		block content
 
 		include ../layouts/footer.jade
+=======
+		.wrap
+			block content
+
+			include ../layouts/footer.jade
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
 
 		script(type='text/javascript', src='js/html5shiv.min.js')
 		script(type='text/javascript', src='js/respond.min.js')
@@ -25,6 +32,396 @@ html
 		//- script(type="text/javascript" src="js/jquery.inputmask.min.js")
 		//- script(type="text/javascript" src="js/full-calendar.js")
 		script.
+<<<<<<< HEAD
 			$( '.chosen-select' ).chosen( {disable_search_threshold: 50} );
 
 		block scripts
+=======
+			$( '.chosen-select:not(#partnersList)' ).chosen( {disable_search_threshold: 50} );
+
+			  
+			//- $('#date').datetimepicker({
+			//-   format: 'DD.MM.YYYY',
+			//-   locale: "ru"
+			//- });
+
+			//- $('#passTwo').datetimepicker({
+			//-   format: 'DD.MM.YYYY',
+			//-   locale: "ru"
+			//- });
+
+			$("#slider-1").owlCarousel({
+			mouseDrag: false,
+			center: true,
+			items:1,
+			nav:true,
+			margin:10,
+			navText: ['', ''],
+			startPosition: 1,
+			responsive:{
+				586:{
+					items: 3
+				}
+			}
+			});
+
+			$("#slider-2").owlCarousel({
+			mouseDrag: false,
+			center: true,
+			items:1,
+			nav:true,
+			margin:10,
+			navText: ['', ''],
+			startPosition: 1,
+			responsive:{
+				586:{
+					items: 3
+				}
+			}
+			});
+
+			$("#slider-3").owlCarousel({
+			mouseDrag: false,
+			center: true,
+			items:1,
+			nav:true,
+			margin:10,
+			navText: ['', ''],
+			startPosition: 1,
+			responsive:{
+				586:{
+					items: 3
+				}
+			}
+			});
+
+			$("#slider-4").owlCarousel({
+				mouseDrag: false,
+				items: 3,
+				nav: true,
+				margin: 10,
+				navText: ['', ''],
+				responsive: {
+					1000:{
+						items: 5
+					}
+				}
+			});
+
+			var options = $('#partnersList option');
+			var arr = options.map(function(_, o) {
+				return {
+					t: $(o).text(),
+					v: o.value
+				};
+			}).get();
+			arr.sort(function(o1, o2) {
+				return o1.t > o2.t ? 1 : o1.t < o2.t ? -1 : 0;
+			});
+			options.each(function(i, o) {
+				console.log(i);
+				o.value = arr[i].v;
+				$(o).text(arr[i].t);
+			});
+			
+			$( '#partnersList' ).chosen( );
+			//- .change( function(e) { 
+			//-   if ( $(this).val() != '' ) {
+			//-     var openLink = window.open($(this).val(), '_blank');
+			//-     openLink.focus();
+			//-   }
+			//- } );
+
+			$.validator.addMethod( "require_from_group_with_depend", function( value, element, options ) {
+			var $fields = $( options[ 1 ], element.form ),
+				$fieldsFirst = $fields.eq( 0 ),
+				elem = false,
+				validator = $fieldsFirst.data( "valid_req_grp" ) ? $fieldsFirst.data( "valid_req_grp" ) : $.extend( {}, this ),
+				isValid = $fields.filter( function() {
+				$('input[data-depend="' + $(this).attr('name') +'"]').removeAttr( 'required' );
+
+				if ( $(this).val().length >= options[ 0 ] && !elem) {
+					elem = this;
+				}
+				return validator.elementValue( this );
+				} ).length >= options[ 0 ];
+
+			// Store the cloned validator for future validation
+			$fieldsFirst.data( "valid_req_grp", validator );
+
+			// If element isn't being validated, run each require_from_group field's validation rules
+			if ( !$( element ).data( "being_validated" ) ) {
+				$fields.data( "being_validated", true );
+				$fields.each( function() {
+				validator.element( this );
+				} );
+				$fields.data( "being_validated", false );
+			}
+
+			if ( isValid ) {
+				var validEl = $('input[data-depend="' + $(elem).attr('name') +'"]');
+				validEl.rules( "add", {
+				required: true,
+				} );
+				validEl.valid();
+			}
+			return isValid;
+			}, $.validator.format( "Please fill at least {0} of these fields." ) );
+
+			$('#regForm').validate({
+				onkeyup: true,
+				rules: {
+				email: {
+					email: true
+				},
+				serialNumOne: {
+					require_from_group_with_depend: [1, ".serialNumber"]
+				},
+				serialNumTwo: {
+					require_from_group_with_depend: [1, ".serialNumber"]
+				},
+				serialNumThree: {
+					require_from_group_with_depend: [1, ".serialNumber"]
+				},
+				modelOne: {
+					require_from_group: [1, ".model"]
+				},
+				modelTwo: {
+					require_from_group: [1, ".model"]
+				},
+				modelThree: {
+					require_from_group: [1, ".model"]
+				}
+				},
+
+				submitHandler: function(form){
+
+				$( '#regModalInfo .modal-body h3' ).html( 'Спасибо! Ваша заявка принята.' );
+				$( '#regModalInfo' ).modal( 'show' );
+
+				setTimeout( function() {
+					$( '#regModalInfo' ).modal( 'hide' );
+					$( '#regModal' ).modal( 'hide' );
+					form.submit();
+				}, 2000 );
+				
+				},
+				invalidHandler: function(){
+					$( '#regModalInfo .modal-body h3' ).html( 'Заполните пожалуйста выделенные поля' );
+					$( '#regModalInfo' ).modal( 'show' );
+
+					setTimeout( function() {
+					$( '#regModalInfo' ).modal( 'hide' );
+					}, 2000 );
+
+					$('#error').html('Пожалуйста, заполните все поля');
+				}
+			});
+
+			$( '.file input' ).on( 'change', function() {
+			var files = $(this)[0].files,
+				filesName = '';
+
+			for ( var i = 0; i < files.length; i++ ) {
+				filesName += i == files.length - 1 ? files[i].name : files[i].name + ', ';
+			}
+			$(this).parents('.input-set').find('.file-name').html( filesName );
+			} )
+
+			$( '#passNum' ).mask( '0000 000000') ;
+			$( '#zipCode' ).mask( '000000' );
+			$( '#ident' ).mask( '000000000000' );
+			$( '#divCode' ).mask( '000000' );
+			$( '#date' ).mask( '00.00.0000', { placeholder: 'Дата дня рождения' } );
+			$( '#passTwo' ).mask( '00.00.0000', { placeholder: 'Дата выдачи паспорта' } );
+			$( '#phone' ).mask( '+7 (000) 000-00-00' );
+			$( '#priceOne' ).mask( '000.000.000.000.000 руб.', { reverse: true });
+			$( '#priceTwo' ).mask( '000.000.000.000.000 руб.', { reverse: true });
+			$( '#priceThree' ).mask( '000.000.000.000.000 руб.', { reverse: true });
+			$( '#serialNumOne' ).mask( '0#' );
+			$( '#serialNumTwo' ).mask( '0#' );
+			$( '#serialNumThree' ).mask( '0#' );
+			$( '#email' ).mask( 'Z', {translation:  {'Z': {pattern: /[\w@\-.+]/, recursive: true}}} );
+			$( '#city' ).mask( 'A', {translation:  {'A': {pattern: /[А-Яа-я]/, recursive: true}}} );
+			//- $( '#street' ).mask( 'A', {translation:  {'A': {pattern: /[А-Яа-я]/, recursive: true}}} );
+			//- $( '#building' ).mask( 'A', {translation:  {'A': {pattern: /[А-Яа-я]/, recursive: true}}} );
+			$( '#cityTwo' ).mask( 'A', {translation:  {'A': {pattern: /[А-Яа-я]/, recursive: true}}} );
+			//- $( '#corpus' ).mask( '0#' );
+			//- $( '#flat' ).mask( '0#' );
+
+			$( '#credit' ).change( function( event ) {
+			if ( $( event.target ).val() == 1 ) {
+				$( '#photo6-input' ).css( { display: 'block' } );
+			} else {
+				$( '#photo6-input' ).css( { display: 'none' } );
+			}
+			});
+
+			$( '#method' ).change( function( event ) {
+			if ( $( event.target ).val() == 1 || $( event.target ).val() == 2 ) {
+				if ( $( event.target ).val() == 1 ) {
+					$( '.method .input-set__label' ).html( 'Номер карты банка' )
+					$( '.method input' ).attr( 'placeholder', 'Номер карты банка' );
+				} else {
+					$( '.method .input-set__label' ).html( 'Номер кошелека Яндекс.деньги' )
+					$( '.method input' ).attr( 'placeholder', 'Номер кошелека Яндекс.деньги' );
+				}
+				
+				$( '.method' ).css( { display: 'block' } );
+				$( '.method input' ).rules( "add", {
+				required: true,
+				} );
+				$( '.method input' ).valid();
+			} else {
+				$( '.method' ).css( { display: 'none' } );
+				$( '.method input' ).rules( "remove" );
+			}
+			});
+
+			$( '.model' ).chosen().change( function( event ) {
+			var input = $( this ).parents( '.input-set' ).find( '.model-input' ),
+				item = $( event.target ),
+				_this = this;
+
+			if ( $( event.target ).val() == '0' ) {
+				input.css( { display: 'block' });
+
+				if ( input.data( 'init' ) === false ) {
+
+				function onKeyUp() {
+					$( _this ).find( 'option:last-child' ).remove()
+					$( _this ).append( '<option value="' + $( this ).val() + '">Другое</option>' );
+					var options = $( _this ).find( 'option' );
+					$( _this ).find( 'option' ).eq( $( _this ).find( 'option' ).length - 1 ).attr( 'selected', 'selected' );
+					$( _this ).trigger("chosen:updated");
+					
+					console.log( $( _this ).val() );
+				}
+
+				input.data( 'init', 'true' )
+				input.on( 'keyup', onKeyUp);
+
+				}
+			} else {
+				$( this ).parents( '.input-set' ).find( '.model-input' ).css( { display: 'none' });
+			}
+			});
+
+			$('.modal').on('shown.bs.modal', function (e) {
+				
+				if ( $( this ).hasClass('nout') ) {
+				$('body').removeClass('modal-open');
+				}
+
+			});
+
+			$('.modal').on('hidden.bs.modal', function (e) {
+				
+				if ( $( this ).hasClass('popup') ) {
+					$('body').addClass('modal-open');
+				} else {
+				$('body').removeClass('modal-open');
+				}
+
+			});
+			
+			$('#auth-form').validate({
+				onkeyup: false,
+				rules: {
+				email: {
+					email: true
+				}
+				},
+				submitHandler: function( form ){
+					var response = {
+							error: 1
+						};
+
+						
+					if ( response.error == 1 ) {
+						$( form ).find('#error').html('Неверный e-mail или пароль');
+
+						return;
+					} 
+
+					form.submit();
+
+				},
+				invalidHandler: function( ){
+					$('#error').html('Пожалуйста, заполните все поля');
+				}
+			});
+
+			$('#restore').validate({
+				onkeyup: false,
+				rules: {
+				email: {
+					email: true
+				}
+				},
+				submitHandler: function(form){
+					var response = {
+								error: 1
+							};
+
+					$('#error').html('');
+
+							
+					if ( response.error == 1 ) {
+						$( form ).find('#error').html('Мы не нашли Вашу почту,<br />попробуйте еще раз.');
+
+						return;
+					}
+
+					$( form ).parents( '.modal' ).find( '.modal-body' ).html( '<h2 class="text-center" style="margin-bottom: 50px;">Готово! Мы отправили новый пароль<br />на вашу почту.</h2>' );
+
+					setTimeout( function() {
+						$( form ).parents( '.modal' ).modal( 'hide' );
+					}, 2000);
+
+				},
+				invalidHandler: function(){
+					$('#error').html('Пожалуйста, заполните все поля');
+				}
+			});
+
+
+			$('#newPass').validate({
+				onkeyup: false,
+				rules: {
+				email: {
+					email: true
+				}
+				},
+				submitHandler: function(form){
+				var response = true;
+
+				$('#error').html('');
+
+				if ( $( '#password' ).val() != $( '#passwordRepeat' ).val() ) {
+					$('#error').html('Пароли должны совпадать');
+					return;
+				}
+
+				if ( response ) {
+
+					$( form ).submit()
+					
+					return;
+				} 
+
+				},
+				invalidHandler: function(){
+
+					if ( $( '#password' ).val().length < 6 ) {
+						$('#error').html('Пароль должен быть не менее чем из 6-ти символов');
+
+						return;
+					}
+					$('#error').html('Пожалуйста, заполните все поля');
+				}
+			});
+
+		block scripts
+		
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249

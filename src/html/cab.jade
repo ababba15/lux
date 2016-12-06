@@ -4,7 +4,12 @@ block title
   title Electrolux - Кабинет
 
 block content
+<<<<<<< HEAD
   div(data-spy="affix" id="dot-nav")
+=======
+  div.affix(data-spy="affix" id="dot-nav")
+    h4.affix__title Быстрый переход
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
     ul
       li(class="awesome-tooltip active" title="Главная")
         a(href="#home")
@@ -20,8 +25,16 @@ block content
   #home.section-nav
     section.section-main.bg-cover(style="background-image: url(images/image.jpg);")
       .container-fixed
+<<<<<<< HEAD
         p.section-main__date(data-animation="slideInLeft") С 1 декабря по 31 января 2017
         h1(data-animation="slideInLeft") Electrolux возвращает<br />деньги за покупки
+=======
+        h1.section-main__text-container
+          .section-main__text-one Вернем
+            .section-main__text-two <span>до </span>50%
+          .section-main__text-three от стоимости<br />посудомоечной машины!
+          .section-main__text-three(style="margin-top: 10px;") успейте до 31.01.2017
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
     section.section-map
       .container-fixed
         a.section-map__item(href="#buy" data-animation="slideInLeft")
@@ -52,7 +65,11 @@ block content
             .products__item(data-productID="9" data-name="Посудомоечная машина" data-price="0" data-type="3")
               img(src="images/pic3.png", alt="" )
           .section-calculate__text
+<<<<<<< HEAD
             p При покупке комплекта духовки,<br />варочной панели и посудомоечной<br />машины <b>Electrolux</b>
+=======
+            //- p При покупке комплекта духовки,<br />варочной панели и посудомоечной<br />машины <b>Electrolux</b>
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
           button.button Рассчитать выгоду
         .section-calculate__item.col-md-4
          .section-calculate__products.products
@@ -62,19 +79,32 @@ block content
             .products__item(data-productID="7" data-name="Варочная панель" data-price="0" data-type="2")
               img(src="images/pic2.png", alt="")
           .section-calculate__text
+<<<<<<< HEAD
             p При покупке комплекта духовки и<br />варочной панели <b>Electrolux</b>
+=======
+            //- p При покупке комплекта духовки и<br />варочной панели <b>Electrolux</b>
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
           button.button Рассчитать выгоду
         .section-calculate__item.col-md-4
          .section-calculate__products.products
             .products__item(data-productID="9"  data-name="Посудомоечная машина" data-price="0" data-type="3")
               img(src="images/pic3.png", alt="")
           .section-calculate__text
+<<<<<<< HEAD
             p При покупке посудомоечной<br />машины <b>Electrolux</b>
           button.button Рассчитать выгоду
   section#own-calc.section-nav.section-calculator
     .container-fixed
       h2.title(style="margin-bottom: 0;") Рассчитай свою выгоду
       p.text-center.pink Выберите товары, чтобы узнать свою выгоду
+=======
+            //- p При покупке посудомоечной<br />машины <b>Electrolux</b>
+          button.button Рассчитать выгоду
+  section#own-calc.section-nav.section-calculator
+    .container-fixed
+      h2.title(style="margin-bottom: 0;") Калькулятор выгоды<sup>*</sup>
+      p.text-center.pink Введи стоимость выбранной техники,<br />и калькулятор автоматически рассчитает выгоду
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
       .section-calculator__calculator.row
         .col-md-8
           .section-calculator__item(data-type="1" data-name="Духовка")
@@ -84,15 +114,24 @@ block content
           .section-calculator__item(data-type="2" data-name="Варочная<br />панель")
             .section-calculator__prod
             .section-calculator__button
+<<<<<<< HEAD
               button.button.addPosition Добавить варочную панель
           .section-calculator__item(data-type="3" data-name="Посудомоечная<br />машина")
             .section-calculator__prod
             .section-calculator__button
               button.button.addPosition Добавить посудомоечную машину
+=======
+              button.button.addPosition Добавить<br />варочную<br />панель
+          .section-calculator__item(data-type="3" data-name="Посудомоечная<br />машина")
+            .section-calculator__prod
+            .section-calculator__button
+              button.button.addPosition Добавить<br />посудомоечную<br />машину
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
         .col-md-4
           .section-calculator__amount
             .section-calculator__amount-number 0
             .section-calculator__amount-text Ваша выгода
+<<<<<<< HEAD
   .section-nav#prod
     section#buy.section-slider
       .container-fixed
@@ -186,6 +225,12 @@ block content
             .slider__seller UnixMart.ru
         .text-center
           button(data-button="3").addToCalc.button.button-icon--star Добавить в калькулятор
+=======
+    .row
+        .col-xs-12
+          p.text-center <sup>*</sup>Онлайн Калькулятор является интерактивной опцией. Не является офертой.<br />В случае покупки техники со скидкой учитывается стоимость с вычетом скидки.
+  include ../includes/goods.jade
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
   include ../includes/partners.jade
   .modal.how-it-work.fade#howItWork(tabindex="-1" role="dialog" aria-labelledby="regProducts")
     .modal-dialog(role="document")
@@ -277,6 +322,7 @@ block content
             img(src="images/logo.svg", alt="")
           h3.modal-title.text-center Изменение данных
         .modal-body
+<<<<<<< HEAD
           form#regForm
             .input-set
               input(type="text" name="name" placeholder="Фамилия" required)
@@ -287,11 +333,31 @@ block content
             .input-set.input-date
                 input#date.input(type="text" name="birthday" placeholder="Дата дня рождения" required)
             .input-set
+=======
+          form#regForm(action="cab.html")
+            .input-set.input-set--animated-label
+              label.input-set__label Фамилия
+              input(type="text" name="name" placeholder="Фамилия" required)
+            .input-set.input-set--animated-label
+              label.input-set__label Имя
+              input(type="text" name="surname" placeholder="Имя" required)
+            .input-set.input-set--animated-label
+              label.input-set__label Отчество
+              input(type="text" name="patronymic" placeholder="Отчество" required)
+            .input-set.input-set--animated-label
+              label.input-set__label Дата дня рождения
+              .input-date
+                input#date.input(type="text" name="birthday" placeholder="Дата дня рождения" required)
+              .helper ДД.ММ.ГГГГ
+            .input-set.input-set--animated-label
+              label.input-set__label Откуда Вы узнали об акции?
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
               select.chosen-select#where(name="where" data-placeholder="Откуда Вы узнали об акции?" required)
                   option
                   option(value="1") Друзья
                   option(value="2") Реклама в интернете
                   option(value="3") Реклама в магазине
+<<<<<<< HEAD
             .input-set
               input#email(type="text" name="email" placeholder="E-mail" required)
             .input-set
@@ -322,6 +388,58 @@ block content
               input#phone(type="text" name="phone" placeholder="+7 (000) 000-00-00" required)
             .input-set
               select.chosen-select(name="store" data-placeholder="Название магазина" required)
+=======
+            .input-set.input-set--animated-label
+              label.input-set__label E-mail
+              input#email(type="text" name="email" placeholder="E-mail" required)
+            .input-set.input-set--animated-label
+              label.input-set__label Пароль
+              input#password(type="password" name="password" placeholder="Пароль" required)
+            .input-set.input-set--animated-label
+              label.input-set__label ИНН
+              input#ident(type="text" name="ident" placeholder="ИНН" required)
+            .input-set.input-set--animated-label
+              label.input-set__label Серия номер паспорта
+              input#passNum(type="text" name="passNum" minlength="10" maxlength="10" placeholder="Серия номер паспорта" required)
+            .input-set.input-set--animated-label
+              label.input-set__label Код подразделения
+              input#divCode(type="text" name="divCode" placeholder="Код подразделения" required)
+            .input-set.input-set--animated-label
+              label.input-set__label Кем выдан
+              input(type="text" name="passOne" placeholder="Кем выдан" required)
+            .input-set.input-set--animated-label
+              label.input-set__label Когда выдан
+              .input-date
+                input#passTwo(type="text" name="passTwo" placeholder="Когда выдан" required)
+              .helper ДД.ММ.ГГГГ
+            .input-set.input-set--animated-label
+              label.input-set__label Адрес по прописке
+              textarea(name="", cols="30", rows="2" placeholder="Адрес по прописке")
+            .input-set.input-set--animated-label
+              label.input-set__label Почтовый индекс
+              input#zipCode(type="text" name="zipCode" minlength="6" maxlength="6" placeholder="Почтовый индекс" required)
+            .input-set.input-set--animated-label
+              label.input-set__label Населенный пункт
+              input#city(type="text" name="city" placeholder="Населенный пункт" required)
+            .input-set.input-set--animated-label
+              label.input-set__label Улица
+              input#street(type="text" name="street" placeholder="Улица" required)
+            .input-set.input-set--animated-label
+              label.input-set__label Дом
+              input#building(type="text" name="building" placeholder="Дом")
+            .input-set.input-set--animated-label
+              label.input-set__label Корпус
+              input#corpus(type="text" placeholder="Корпус")
+            .input-set.input-set--animated-label
+              label.input-set__label Квартира
+              input#flat(type="text" name="flat" placeholder="Квартира" required)
+            .input-set.input-set--animated-label
+              label.input-set__label Номер телефона
+              input#phone(type="text" name="phone" placeholder="+7 (000) 000-00-00" required)
+            .input-set.input-set--animated-label
+              label.input-set__label Название магазина
+              select.chosen-select.model(name="store" data-placeholder="Название магазина" required)
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
                   option
                   option(val="1") М.Видео 
                   option(val="2") Эльдорадо 
@@ -363,6 +481,7 @@ block content
                   option(val="38") Мебельная Фабрика Мария 
                   option(val="39") Кухонный Двор
                   option(value="0") Другое
+<<<<<<< HEAD
             .input-set
               input(type="text" name="cityTwo" placeholder="Город покупки" required)
             .input-set
@@ -408,12 +527,91 @@ block content
               .helper (Стоимость со скидкой)
             .input-set
               select#credit.chosen-select(name="credit" data-placeholder="Товар куплен в кредит?*" required)
+=======
+              input.model-input.store(type="text" placeholder="Название магазина" style="display: none;" data-init="false")
+            .input-set.input-set--animated-label
+              label.input-set__label Город покупки
+              input#cityTwo(type="text" name="cityTwo" placeholder="Город покупки" required)
+            .input-set.input-set--animated-label
+              label#storeAddress.input-set__label Адрес магазина
+              input(type="text" name="storeAddress" placeholder="Адрес магазина" required)
+            .input-set.input-set--animated-label
+              label.input-set__label Модель варочной поверхности
+              select.chosen-select#modelOne.model(name="modelOne" data-placeholder="Модель варочной поверхности")
+                  option
+                  option(value="") Нет
+                  option(value="1") EHD96740FK
+                  option(value="2") EHD98740FK
+                  option(value="3") EHH56340FK
+                  option(value="4") EHH6340FOK
+                  option(value="5") GPE363RBK
+                  option(value="6") GPE363RBV
+                  option(value="7") IPE644RBC
+                  option(value="8") CPE644RBC
+                  option(value="9") CPE644RCC
+                  option(value="10") IPE644RCC
+                  option(value="0") Другое
+              input.model-input.modelOne(type="text" placeholder="Название модели" style="display: none;" data-init="false")
+            .input-set.input-set--animated-label
+              label.input-set__label Цена варочной поверхности
+              input#priceOne(type="text" name="priceOne" placeholder="Цена варочной поверхности")
+              .helper (Стоимость со скидкой)
+            .input-set.input-set--animated-label
+              label.input-set__label Модель духового шкафа
+              select.chosen-select#modelTwo.model(name="modelTwo" data-placeholder="Модель духового шкафа")
+                  option
+                  option(value="") Нет
+                  option(value="1") OPEB2650R
+                  option(value="2") OPEB2650C
+                  option(value="3") OPEB2650B
+                  option(value="4") OPEB2650V
+                  option(value="5") EOB53434AX
+                  option(value="6") OPEB6641X
+                  option(value="7") EOB98851AX
+                  option(value="8") OPEB9951Z
+                  option(value="9") EZB52410AX
+                  option(value="10") EOA95551BX
+                  option(value="0") Другое
+              input.model-input.modelTwo(type="text" placeholder="Название модели" style="display: none;" data-init="false")
+            .input-set.input-set--animated-label
+              label.input-set__label Цена духового шкафа
+              input#priceTwo(type="text" name="priceTwo" placeholder="Цена духового шкафа")
+              .helper (Стоимость со скидкой)
+            .input-set.input-set--animated-label
+              label.input-set__label Модель посудомоечной машины
+              select.chosen-select#modelThree.model(name="modelThree" data-placeholder="Модель посудомоечной машины")
+                  option
+                  option(value="") Нет
+                  option(value="1") ESL94200LO
+                  option(value="2") ESL94201LO
+                  option(value="3") ESL94300LA
+                  option(value="4") ESL9450LO
+                  option(value="5") ESL95201LO
+                  option(value="6") ESF9420LOW
+                  option(value="7") ESF9421LOW
+                  option(value="8") ESF9451LOW
+                  option(value="9") ESF9450LOW
+                  option(value="10") ESF9450LOX
+                  option(value="0") Другое
+              input.model-input.modelThree(type="text" placeholder="Название модели" style="display: none;" data-init="false")
+            .input-set.input-set--animated-label
+              label.input-set__label Цена посудомоечной машины
+              input#priceThree(type="text" name="priceThree" placeholder="Цена посудомоечной машины")
+              .helper (Стоимость со скидкой)
+            .input-set.input-set--animated-label
+              label.input-set__label Товар куплен в кредит?
+              select#credit.chosen-select(name="credit" data-placeholder="Товар куплен в кредит?" required)
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
                   option
                   option(value="1") Да
                   option(value="0") Нет
             .input-set
               .file
+<<<<<<< HEAD
                 input#check(name="check" type="file" accept="image/jpeg,image/png" required)
+=======
+                input#check(name="check" type="file" accept="image/jpeg,image/png" multiple required)
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
                 label(for="check") Скан-копия чека
               .helper.file-name
             .input-set
@@ -422,11 +620,22 @@ block content
                 label(for="photo1") Фото товара без упаковки в домашней обстановке
               .helper.file-name
               .helper Допустимые форматы для загрузки: *.jpg, *.png
+<<<<<<< HEAD
             .input-set
               input#serialNumOne.serialNumber(type="text" name="serialNumOne" placeholder="Серийный номер варочной поверхности")
             .input-set
               input#serialNumTwo.serialNumber(type="text" name="serialNumTwo" placeholder="Серийный номер духового шкафа")
             .input-set
+=======
+            .input-set.input-set--animated-label
+              label.input-set__label Серийный номер варочной поверхности
+              input#serialNumOne.serialNumber(type="text" name="serialNumOne" placeholder="Серийный номер варочной поверхности")
+            .input-set.input-set--animated-label
+              label.input-set__label Серийный номер духового шкафа
+              input#serialNumTwo.serialNumber(type="text" name="serialNumTwo" placeholder="Серийный номер духового шкафа")
+            .input-set.input-set--animated-label
+              label.input-set__label Серийный номер посудомоечной машины
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
               input#serialNumThree.serialNumber(type="text" name="serialNumThree" placeholder="Серийный номер посудомоечной машины")
             .input-set
               .file
@@ -456,13 +665,22 @@ block content
               .helper.file-name
               .helper (Заполняется при условии покупки в кредит)
               .helper Допустимые форматы для загрузки: *.jpg, *.png
+<<<<<<< HEAD
             .input-set
+=======
+            .input-set.input-set--animated-label
+              label.input-set__label Способ получения приза
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
               select.chosen-select#method(name="method" data-placeholder="Способ получения приза" required)
                   option
                   option(value="1") Банковская карта
                   option(value="2") Кошелек Яндекс.деньги
                   option(value="3") Мобильный телефон
             .input-set.method(style="display: none;")
+<<<<<<< HEAD
+=======
+              label.input-set__label Номер карты банка
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
               input(type="text" name="cardNum" minlength="16" maxlength="18" placeholder="Номер карты банка")
             .input-set
               input.button(type="submit" value="Сохранить")
@@ -470,6 +688,7 @@ block content
         .modal-footer
 
 block scripts
+<<<<<<< HEAD
   script.
   
     //- $('#date').datetimepicker({
@@ -756,3 +975,6 @@ block scripts
             $('#error').html('Пожалуйста, заполните все поля');
         }
     });
+=======
+  script.
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249

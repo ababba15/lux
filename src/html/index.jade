@@ -4,7 +4,12 @@ block title
   title Electrolux
 
 block content
+<<<<<<< HEAD
   div(data-spy="affix" id="dot-nav")
+=======
+  div.affix(data-spy="affix" id="dot-nav")
+    h4.affix__title Быстрый переход
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
     ul
       li(class="awesome-tooltip active" title="Главная")
         a(href="#home")
@@ -22,8 +27,18 @@ block content
   #home.section-nav
     section.section-main.bg-cover(style="background-image: url(images/image.jpg);")
       .container-fixed
+<<<<<<< HEAD
         p.section-main__date(data-animation="slideInLeft") С 1 декабря по 31 января 2017
         h1(data-animation="slideInLeft") Electrolux возвращает<br />деньги за покупки
+=======
+        .row
+          .col-sm-6
+            h1.section-main__text-container
+              .section-main__text-one Вернем
+                .section-main__text-two <span>до </span>50%
+              .section-main__text-three от стоимости<br />посудомоечной машины!
+              .section-main__text-three(style="margin-top: 10px;") успейте до 31.01.2017
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
     section.section-map
       .container-fixed
         a.section-map__item(href="#buy" data-animation="slideInLeft")
@@ -40,7 +55,11 @@ block content
           h3 Как это работает
   section#calc.section-nav.section-calculate
     .container-fixed
+<<<<<<< HEAD
       h2.title(style="margin-bottom: 0;") Выбери свой комплект
+=======
+      h2.title(style="margin-bottom: 0;") Выбери комплект и узнай свою выгоду
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
       p.text-center.pink Выберите товары, чтобы узнать свою выгоду
       .row
         .section-calculate__item.col-md-4
@@ -54,7 +73,11 @@ block content
             .products__item(data-productID="9" data-name="Посудомоечная машина" data-price="0" data-type="3")
               img(src="images/pic3.png", alt="" )
           .section-calculate__text
+<<<<<<< HEAD
             p При покупке комплекта духовки,<br />варочной панели и посудомоечной<br />машины <b>Electrolux</b>
+=======
+            //- p При покупке комплекта духовки,<br />варочной панели и посудомоечной<br />машины <b>Electrolux</b>
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
           button.button Рассчитать выгоду
         .section-calculate__item.col-md-4
          .section-calculate__products.products
@@ -64,19 +87,32 @@ block content
             .products__item(data-productID="7" data-name="Варочная панель" data-price="0" data-type="2")
               img(src="images/pic2.png", alt="")
           .section-calculate__text
+<<<<<<< HEAD
             p При покупке комплекта духовки и<br />варочной панели <b>Electrolux</b>
+=======
+            //- p При покупке комплекта духовки и<br />варочной панели <b>Electrolux</b>
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
           button.button Рассчитать выгоду
         .section-calculate__item.col-md-4
          .section-calculate__products.products
             .products__item(data-productID="9"  data-name="Посудомоечная машина" data-price="0" data-type="3")
               img(src="images/pic3.png", alt="")
           .section-calculate__text
+<<<<<<< HEAD
             p При покупке посудомоечной<br />машины <b>Electrolux</b>
           button.button Рассчитать выгоду
   section#own-calc.section-nav.section-calculator
     .container-fixed
       h2.title(style="margin-bottom: 0;") Рассчитай свою выгоду
       p.text-center.pink Выберите товары, чтобы узнать свою выгоду
+=======
+            //- p При покупке посудомоечной<br />машины <b>Electrolux</b>
+          button.button Рассчитать выгоду
+  section#own-calc.section-nav.section-calculator
+    .container-fixed
+      h2.title(style="margin-bottom: 0;") Калькулятор выгоды<sup>*</sup>
+      p.text-center.pink Введи стоимость выбранной техники,<br />и калькулятор автоматически рассчитает выгоду
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
       .section-calculator__calculator.row
         .col-md-8
           .section-calculator__item(data-type="1" data-name="Духовка")
@@ -86,15 +122,24 @@ block content
           .section-calculator__item(data-type="2" data-name="Варочная<br />панель")
             .section-calculator__prod
             .section-calculator__button
+<<<<<<< HEAD
               button.button.addPosition Добавить варочную панель
           .section-calculator__item(data-type="3" data-name="Посудомоечная<br />машина")
             .section-calculator__prod
             .section-calculator__button
               button.button.addPosition Добавить посудомоечную машину
+=======
+              button.button.addPosition Добавить<br />варочную<br />панель
+          .section-calculator__item(data-type="3" data-name="Посудомоечная<br />машина")
+            .section-calculator__prod
+            .section-calculator__button
+              button.button.addPosition Добавить<br />посудомоечную<br />машину
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
         .col-md-4
           .section-calculator__amount
             .section-calculator__amount-number 0
             .section-calculator__amount-text Ваша выгода
+<<<<<<< HEAD
   .section-nav#prod
     section#buy.section-slider
       .container-fixed
@@ -188,11 +233,18 @@ block content
             .slider__seller UnixMart.ru
         .text-center
           button(data-button="3").addToCalc.button.button-icon--star Добавить в калькулятор
+=======
+      .row
+        .col-xs-12
+          p.text-center <sup>*</sup>Онлайн Калькулятор является интерактивной опцией. Не является офертой.<br />В случае покупки техники со скидкой учитывается стоимость с вычетом скидки.
+  include ../includes/goods.jade
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
   include ../includes/partners.jade
   section#reg.section-nav.section-registration
       .container-fixed.text-center
         h2.title Уже купил технику Electrolux?<br />Прими участие в акции!
         button.button(data-toggle="modal" data-target="#regModal") Зарегистрировать покупку
+<<<<<<< HEAD
   .modal.how-it-work.fade#howItWork(tabindex="-1" role="dialog" aria-labelledby="regProducts")
     .modal-dialog(role="document")
       .modal-content
@@ -804,3 +856,8 @@ block scripts
             $('#error').html('Пожалуйста, заполните все поля');
         }
     });
+=======
+  include ../includes/modals-one.jade
+block scripts
+  script.
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249

@@ -130,6 +130,7 @@ calculator.prototype.calculate = function() {
 		}
 	}
 
+<<<<<<< HEAD
 	this.amount = this.isZero ? 0 : amount;
 
 	if (this.items.length === 3) {
@@ -137,6 +138,15 @@ calculator.prototype.calculate = function() {
 	}
 
 
+=======
+	if (this.items.length === 3) {
+		this.amount_2 = this.isZero ? 0 : $(this.items[2]).data('value');
+		this.amount = this.isZero ? 0 : $(this.items[0]).data('value') + $(this.items[1]).data('value');
+	} else {
+		this.amount = this.isZero ? 0 : amount;
+	}
+
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
 	this.profit();
 	this.show();
 	this.checkLastItem();
@@ -223,9 +233,16 @@ calculator.prototype.removeAll = function() {
 
 calculator.prototype.add = function(el, price, priceNum, name) {
 
+<<<<<<< HEAD
 	var productType = el.data('type'),
 		typeInCalc = this.calc.find('.section-calculator__input input[data-type="' + productType + '"]'),
 		id = typeInCalc.parents('.section-calculator__item').find('.section-calculator__delete').data('id');
+=======
+	var productType = parseInt(el.data('type')),
+		typeInCalc = this.calc.find('.section-calculator__input input[data-type="' + productType + '"]'),
+		id = typeInCalc.parents('.section-calculator__item').find('.section-calculator__delete').data('id'),
+		max = (productType === 3) ? 'max 120 000р' : 'max 150 000р';
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
 
 	$('.slider__item[data-productID="' + id + '"]').removeClass('slider__item--inCalc');
 
@@ -233,6 +250,10 @@ calculator.prototype.add = function(el, price, priceNum, name) {
 		itemTemplate = '<div class="section-calculator__name">\
 							<div class="section-calculator__text">\
 							<h5>' + name + '</h5>\
+<<<<<<< HEAD
+=======
+							<div class="section-calculator__helper">' + max + '</div>\
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
 							<div class="section-calculator__delete" data-id="' + el.data('productid') + '"></div>\
 							</div>\
 						</div>\
@@ -248,7 +269,21 @@ calculator.prototype.add = function(el, price, priceNum, name) {
 	$('.slider__item[data-productID="' + el.data('productid') + '"]').addClass('slider__item--inCalc');
 
 	function onKeyUp() {
+<<<<<<< HEAD
 		$(this).data('value', parseInt($(this).val().replace(/\D+/g, '')));
+=======
+		
+		var val = parseInt($(this).val().replace(/\D+/g, '')),
+			max = (parseInt($(this).data('type')) === 3) ? 120000 : 150000;
+
+		if ( val > max) {
+			$(this).data('value', max);
+			$(this).val( max );
+		} else {
+			$(this).data('value', val);
+		}
+		
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
 		_this.calculate();
 	};
 
@@ -281,11 +316,21 @@ calculator.prototype.addPosition = function(el) {
 
 	var _this = this,
 		parentEl = $(el).parents('.section-calculator__item'),
+<<<<<<< HEAD
 		productType = parentEl.data('type'),
 		productName = parentEl.data('name'),
 		itemTemplate = '<div class="section-calculator__name">\
 							<div class="section-calculator__text">\
 							<h5>' + productName + '</h5>\
+=======
+		productType = parseInt(parentEl.data('type')),
+		productName = parentEl.data('name'),
+		max = (productType === 3) ? 'max 120 000р' : 'max 150 000р';
+		itemTemplate = '<div class="section-calculator__name">\
+							<div class="section-calculator__text">\
+							<h5>' + productName + '</h5>\
+							<div class="section-calculator__helper">' + max + '</div>\
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
 							<div class="section-calculator__delete"></div>\
 							</div>\
 						</div>\
@@ -299,7 +344,21 @@ calculator.prototype.addPosition = function(el) {
 	container.addClass('section-calculator__item--full');
 
 	function onKeyUp() {
+<<<<<<< HEAD
 		$(this).data('value', parseInt($(this).val().replace(/\D+/g, '')));
+=======
+
+		var val = parseInt($(this).val().replace(/\D+/g, '')),
+			max = (parseInt($(this).data('type')) === 3) ? 120000 : 150000;
+
+		if ( val > max) {
+			$(this).data('value', max);
+			$(this).val( max );
+		} else {
+			$(this).data('value', val);
+		}
+
+>>>>>>> 8901584e36d6a46a14b07fbde10077baaa5b2249
 		_this.calculate();
 	};
 
