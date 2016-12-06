@@ -1,0 +1,30 @@
+doctype html
+html
+	include head.jade
+	body
+		block content
+
+		include ../layouts/footer.jade
+
+		script(type='text/javascript', src='js/html5shiv.min.js')
+		script(type='text/javascript', src='js/respond.min.js')
+		script(src="js/owl.carousel.min.js" type="text/javascript")
+		link(rel='stylesheet', href='css/animate.css')
+		script(type='text/javascript', src='js/moment-with-locales.min.js')
+		script(type='text/javascript', src='js/bootstrap/bootstrap-datepicker.min.js')
+		script(type='text/javascript', src='js/chosen.jquery.min.js')
+		script(type='text/javascript', src='js/validation.js')
+		script(type='text/javascript', src='js/validation-methods.js')
+		script(type='text/javascript' src='js/mask.js')
+		script(type='text/javascript', src='js/app.js')
+		//- script(type='text/javascript', src='js/validation.js')
+		//- script(type="text/javascript" src="js/inputmask.min.js")
+		//- script(type="text/javascript" src="js/inputmask.extensions.min.js")
+		//- script(type="text/javascript" src="js/moment-with-locales.min.js")
+		//- script(type="text/javascript" src="js/bootstrap-datepicker.min.js")
+		//- script(type="text/javascript" src="js/jquery.inputmask.min.js")
+		//- script(type="text/javascript" src="js/full-calendar.js")
+		script.
+			$( '.chosen-select' ).chosen( {disable_search_threshold: 50} );
+
+		block scripts

@@ -1,0 +1,15 @@
+{
+  "name": "Lux2-9d0b3560933e5c98c8b1eb0e1d46eb2d9d517b59",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

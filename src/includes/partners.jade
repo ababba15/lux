@@ -1,0 +1,50 @@
+section#partners.section-nav.section-partners
+    .container-fixed
+      h2.title Наши партнеры
+      .input-set
+            select.chosen-select#partnersList(name="modelOne" data-placeholder="Партнеры")
+                option
+                option(val="") М.Видео 
+                option(val="") Эльдорадо 
+                option(val="") ММС 
+                option(val="") Техносила 
+                option(val="") Стильные кухни 
+                option(val="") Салон Техноторг 
+                option(val="") Мороз и кофе 
+                option(val="") Амадеус 
+                option(val="") Памира 
+                option(val="") electrolux-rus/кухнисити 
+                option(val="") Хофф 
+                option(val="") Кухнисити 
+                option(val="") Архиформ 
+                option(val="") Холодильник 
+                option(val="") Electrolux-shop.ru 
+                option(val="") 003.RU 
+                option(val="") Реванш 
+                option(val="") Домотехника 
+                option(val="") ТК "Дружба" 
+                option(val="") Поиск 
+                option(val="") Центр 
+                option(val="") RBT.RU 
+                option(val="") 5 Элемент 
+                option(val="") Норд 
+                option(val="") Домо 
+                option(val="") ТЕХНО 
+                option(val="") Юлмарт 
+                option(val="") Baltmaximus 
+                option(val="") Технопарк 
+                option(val="") Техпорт 
+                option(val="") Citilink.ru 
+                option(val="") Astrade 
+                option(val="") RayBT.ru 
+                option(val="") Hedway 
+                option(val="") ДНС 
+                option(val="") ДНС 
+                option(val="") ДНС 
+                option(val="") Мебельная Фабрика Мария 
+                option(val="") Кухонный Двор
+      #slider-4.owl-carousel.slider-image.section-partners__logotypes
+        - var i = 1;
+        while i < 32
+          a.section-partners__logotype
+            img(src="images/logos/#{i++}.png", alt="")
